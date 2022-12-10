@@ -1,0 +1,32 @@
+<h2 style="margin-left: 190px;margin-top: 20px;">Users List</h2>
+<table class="table" style="width: 800px;margin-left: 190px;margin-top: 100px;">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">UserName</th>
+        <th scope="col">Email</th>
+        <th scope="col">show</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of listUsers">
+        <th scope="row">{{user.id}}</th>
+        <td>{{user.name}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.email}}</td>
+        <td><button routerLink="/TodoDetails/{{this.user.id}}" class="btn btn-primary">Voir Todo</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <input type="text" [(ngModel)]="inputValue" style="margin-left: 190px;margin-top: 30px;" placeholder="Enter UserName"/>
+  <button (click)="Calcul();affiche()" class="btn btn-danger" style="margin-left: 60px;">Vérifier</button>
+  <br>
+  <br>
+  <h3 *ngIf="test == true" style="margin-left: 190px;margin-bottom: 50px;">Le nombre d'utilisateur ayant ce UserName est : {{nbrOfUsers}} </h3>
+
+
+
+
+ 
